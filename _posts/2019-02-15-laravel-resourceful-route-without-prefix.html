@@ -1,0 +1,78 @@
+---
+layout: post
+title: Laravel Resourceful Route Without Prefix
+date: 2019-02-15 00:33:05.000000000 -08:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- General
+tags: []
+meta:
+  _publicize_done_13597067: '1'
+  _wpas_done_13540616: '1'
+  _publicize_job_id: '27646907031'
+  timeline_notification: '1550190789'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:13540616;s:54:"https://twitter.com/kennith/status/1096205742284115969";}}
+  publicize_twitter_user: kennith
+author:
+  login: kennith
+  email: kennith.leung@gmail.com
+  display_name: Kennith
+  first_name: ''
+  last_name: ''
+permalink: "/2019/02/15/laravel-resourceful-route-without-prefix/"
+---
+<p><!-- wp:paragraph --></p>
+<p>The resource controller contain a method for each of the available resource operations. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>For example:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>Route::resource('photos', 'PhotoController');</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>is handle by the verbs in the controller. such as</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>/photos
+/photos/create
+/photos/{photo}
+/photos/{photo}/edit
+...</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you want the  resource without the name, you can do</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>Route::resource('/', 'PhotoController');</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>but the parameters will not work properly since the route will become</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>/
+/create
+/{}
+/{}/edit</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>in order to "fix" that, you can do</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>Route::resource('/', 'PhotoController')-&gt;parameters([
+  '' =&gt; 'photo',
+]);</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>so the route now is</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>/
+/create
+/{photo}
+/{photo}/edit</code></pre>
+<p><!-- /wp:code --></p>

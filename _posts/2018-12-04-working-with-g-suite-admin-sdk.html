@@ -1,0 +1,76 @@
+---
+layout: post
+title: Working with G Suite Admin SDK
+date: 2018-12-04 00:21:29.000000000 -08:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Web Development
+tags: []
+meta:
+  _wpas_skip_13540616: '1'
+  _wp_old_date: '2019-01-11'
+  _publicize_job_id: '26425166270'
+  timeline_notification: '1547226592'
+author:
+  login: kennith
+  email: kennith.leung@gmail.com
+  display_name: Kennith
+  first_name: ''
+  last_name: ''
+permalink: "/2018/12/04/working-with-g-suite-admin-sdk/"
+---
+<p><!-- wp:image {"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="https://kennith.files.wordpress.com/2018/12/3d1cf-18SW-FGXsHs3e4Tztj08n7g.png" alt="" /></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>On occasion, you want to build an application to interact with G Suite without logging to the console. The <a href="https://developers.google.com/admin-sdk/" rel="noreferrer noopener" target="_blank">G Suite Admin SDK</a> is a tool for the purpose.&nbsp;</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>In authentication, there are two ways to do it.&nbsp;</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<li>Using service account and impersonate an account with administrative access.&nbsp;</li>
+<li>Use OAuth to authenticate access through SDK. (Recommended)</li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>The first option is great for automate tasks, such as generating reports, but not recommended for web app with access from anyone.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Let’s look at how to implement option #2 with <a href="https://laravel.com/" rel="noreferrer noopener" target="_blank">Laravel</a>.&nbsp;</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<li>Use composer to download and include the Admin SDK. <code>composer require google/apiclient:2.0</code></li>
+<li>Create a OAuth 2.0 client ID in <a rel="noreferrer noopener" href="https://console.developers.google.com/apis" target="_blank">https://console.developers.google.com/apis</a></li>
+<li>Place the <code>client_id</code> and <code>client_secret</code> the same way you when setting up <a rel="noreferrer noopener" href="https://laravel.com/docs/5.7/socialite" target="_blank">Socialite</a> using Google OAuth.&nbsp;</li>
+<li>In the Socialite login code, set <a rel="noreferrer noopener" href="https://laravel.com/docs/5.7/socialite#access-scopes" target="_blank">scopes</a> that you want the account with administrative access. The Admin SDK scopes are listed in <a rel="noreferrer noopener" href="https://developers.google.com/admin-sdk/directory/v1/guides/authorizing" target="_blank">here</a>.&nbsp;For example to retrieve group, group alias, and member information, uses: <code><code><code>j</code></code></code></li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:preformatted --></p>
+<pre class="wp-block-preformatted">return Socialite::driver(‘google’)<br />  -&gt;scopes([      '<a href="https://www.googleapis.com/auth/admin.directory.group.readonly" rel="noreferrer noopener" target="_blank">https://www.googleapis.com/auth/admin.directory.group.readonly</a>',<br />])<br /> -&gt;redirect();</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:list --></p>
+<ul>
+<li>When <a rel="noreferrer noopener" href="https://www.googleapis.com/auth/admin.directory.group.readonly" target="_blank">retrieving</a> user detail after login, store the <code>$user-&gt;token</code> somewhere.&nbsp;</li>
+</ul>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p>6. Back to using Google client, create a <code>$client</code> as below&nbsp;</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:preformatted --></p>
+<pre class="wp-block-preformatted">$client = new Google_Client();<br />$client-&gt;setApplicationName('G Suite Directory Demo');<br />$client-&gt;setAccessToken([User Token here]);</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:preformatted --></p>
+<pre class="wp-block-preformatted">$service = new Google_Service_Group($client);<br />$optParams = array(<br />  'userKey' =&gt; 'administrative-account@example.com',<br />  'maxResult' =&gt; 10<br />);<br />$results = $service-&gt;groups-&gt;listGroups($optParams);</pre>
+<p><!-- /wp:preformatted --></p>
+<p><!-- wp:paragraph --></p>
+<p>7. Done</p>
+<p><!-- /wp:paragraph --></p>

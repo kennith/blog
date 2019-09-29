@@ -1,0 +1,61 @@
+---
+layout: post
+title: Homestead + dnsmasq
+date: 2019-05-14 16:20:54.000000000 -07:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- General
+tags: []
+meta:
+  _publicize_done_13597067: '1'
+  _publicize_job_id: '30803521357'
+  timeline_notification: '1557850859'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:13540616;s:54:"https://twitter.com/kennith/status/1128334400922497024";}}
+  _wpas_done_13540616: '1'
+  publicize_twitter_user: kennith
+author:
+  login: kennith
+  email: kennith.leung@gmail.com
+  display_name: Kennith
+  first_name: ''
+  last_name: ''
+permalink: "/2019/05/14/homestead-dnsmasq/"
+---
+<p><!-- wp:image {"id":1270,"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="https://kennith.files.wordpress.com/2019/05/image-1.png" alt="" class="wp-image-1270" /><br />
+<figcaption>Homestead and dnsmasq</figcaption>
+</figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>In Laravel, there are two out of the box setups. One is using Homestead and the other one is using Valet. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I personally prefer using Homestead because it is entirely on a virtual machine and it does not affect the host OS. If anything goes wrong, I can simply just destroy the Homestead virtual machine and start a fresh box. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>One of the annoyance to me using Homestead is whenever I create a new project and giving it a unique URL, e.g. project-1.example.test, I have to <a href="https://laravel.com/docs/5.8/homestead#configuring-homestead">edit</a> the <code>/etc/hosts</code> file and add the domain to the list in order for the new URL to work. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Instead of editing the <code>hosts</code> file each time, I started using dnsmasq to proxy all the example.test to the IP address of the Homestead machine. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>The setup is straight forward, here is my steps. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:list {"ordered":true} --></p>
+<ol>
+<li><code>brew install dnsmasq</code></li>
+<li><code>mkdir /etc/resolver</code></li>
+<li><code>touch /etc/resolver/example.test</code></li>
+<li>Edit <code>/etc/resolver/example.test</code> and add <code>nameserver 127.0.0.1</code> at the top of the line. </li>
+<li>Edit <code>/usr/local/etc/dnsmasq.conf</code> and add <strong><code>address=</code></strong><code>/.example.com/&lt;your homestead box ip&gt;</code> in somewhere beneath <code>#address=/double-click.net/127.0.0.1</code>. </li>
+<li>Start dnsmasq with <code>sudo brew services start dnsmasq</code> </li>
+</ol>
+<p><!-- /wp:list --></p>
+<p><!-- wp:paragraph --></p>
+<p><!-- /wp:paragraph --></p>

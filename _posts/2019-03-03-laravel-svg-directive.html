@@ -1,0 +1,47 @@
+---
+layout: post
+title: Laravel SVG directive
+date: 2019-03-03 23:50:04.000000000 -08:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Laravel
+tags: []
+meta:
+  _publicize_done_13597067: '1'
+  _publicize_job_id: '28240787747'
+  timeline_notification: '1551657008'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:13540616;s:54:"https://twitter.com/kennith/status/1102355510186131456";}}
+  _wpas_done_13540616: '1'
+  publicize_twitter_user: kennith
+author:
+  login: kennith
+  email: kennith.leung@gmail.com
+  display_name: Kennith
+  first_name: ''
+  last_name: ''
+permalink: "/2019/03/03/laravel-svg-directive/"
+---
+<p><!-- wp:paragraph --></p>
+<p>I was working on a site and uses <a href="https://twitter.com/steveschoger?lang=en">Steve Schoger</a>'s <a href="http://www.heroicons.com/">Heroicons</a>. The Heroicons are svg based and it works best with SVG using HTML inline. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I wrote a <a href="https://laravel.com/docs/5.8/blade#extending-blade">custom blade directive</a> so that I can include the inline SVG easily with blade directive. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:image {"id":1260} --></p>
+<figure class="wp-block-image"><img src="https://kennith.files.wordpress.com/2019/03/image-1.png" alt="" class="wp-image-1260" /><br />
+<figcaption></figcaption>
+</figure>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>When I need to use a Heroicons svg, I just need to call it with</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>@svg('heroicon-user-plus-sm')</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>given that the svg file is already copied into <code>public/svg</code> directory.</p>
+<p><!-- /wp:paragraph --></p>

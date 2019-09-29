@@ -1,0 +1,50 @@
+---
+layout: post
+title: Laravel Excel Freeze Pane
+date: 2019-09-13 16:54:14.000000000 -07:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- General
+tags: []
+meta:
+  _publicize_job_id: '35253008816'
+  _oembed_fc7a30fd3003cda7ebb3d8e72bb6e7bf: "{{unknown}}"
+  timeline_notification: '1568393658'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:13540616;s:54:"https://twitter.com/kennith/status/1172554104171835392";}}
+  _publicize_done_13597067: '1'
+  _wpas_done_13540616: '1'
+  publicize_twitter_user: kennith
+  _oembed_88101b0fe6d228d5a72e076ca7edb23f: "{{unknown}}"
+  _oembed_acfe101310c6c40eeb9ce91a525f9358: "{{unknown}}"
+author:
+  login: kennith
+  email: kennith.leung@gmail.com
+  display_name: Kennith
+  first_name: ''
+  last_name: ''
+permalink: "/2019/09/13/laravel-excel-freeze-pane/"
+---
+<p><!-- wp:paragraph --></p>
+<p>This is how you freeze a column or a row when using Laravel Excel.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:code --></p>
+<pre class="wp-block-code"><code>&lt;?php
+class User implements WithEvents
+{
+    public function registerEvents(): array
+    {
+        return &#091;
+            AfterSheet::class =&gt; function(AfterSheet $event) {
+              $event-&gt;sheet-&gt;freezePane('B1');
+            },
+        ];
+    }
+}</code></pre>
+<p><!-- /wp:code --></p>
+<p><!-- wp:paragraph --></p>
+<p>See how to freeze pane from <a href="https://github.com/PHPOffice/PhpSpreadsheet/blob/master/src/PhpSpreadsheet/Worksheet/Worksheet.php#L1992">PhpSpreadsheet/Worksheet.php</a> on GitHub.</p>
+<p><!-- /wp:paragraph --></p>

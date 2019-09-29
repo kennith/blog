@@ -1,0 +1,88 @@
+---
+layout: post
+title: Using Mock in Laravel Unit Testing
+date: 2019-06-28 23:59:59.000000000 -07:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Laravel
+tags: []
+meta:
+  _publicize_done_13597067: '1'
+  _publicize_job_id: '32297456927'
+  timeline_notification: '1561766403'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:13540616;s:54:"https://twitter.com/kennith/status/1144757385141071872";}}
+  _wpas_done_13540616: '1'
+  publicize_twitter_user: kennith
+  _oembed_70fbfa1a3e9e514040b3ec2a1274814d: '<div class="embed-amazon"><iframe title="Creativity,
+    Inc.: Overcoming the Unseen Forces That Stand in the Way of True Inspiration"
+    type="text/html" width="500" height="550" frameborder="0" allowfullscreen style="max-width:100%"
+    src="https://read.amazon.com/kp/card?preview=inline&linkCode=kpd&ref_=k4w_oembed_YuIgDQF5GAkPM5&asin=B00FUZQYBO&tag=kpembed-20"></iframe></div>'
+  _oembed_time_70fbfa1a3e9e514040b3ec2a1274814d: '1563115844'
+author:
+  login: kennith
+  email: kennith.leung@gmail.com
+  display_name: Kennith
+  first_name: ''
+  last_name: ''
+permalink: "/2019/06/28/using-mock-in-laravel-unit-testing/"
+---
+<p><!-- wp:paragraph --></p>
+<p>When you have a test that uses a class that pull data from an external API, it might be a good idea to mock this object so it does not reach anywhere outside of your local development or your CI service provider, and you can assure you are getting the data you are expecting.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>Let's use the <a href="http://docs.mockery.io/en/latest/getting_started/simple_example.html">simple example</a> provided by Mockery. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:syntaxhighlighter/code {"language":"php","lineNumbers":false} --></p>
+<pre class="wp-block-syntaxhighlighter-code">class Temperature
+{
+    private $service;
+
+    public function __construct($service)
+    {
+        $this-&gt;service = $service;
+    }
+
+    public function average()
+    {
+        $total = 0;
+        for ($i=0; $i&lt;3; $i++) {
+            $total += $this-&gt;service-&gt;readTemp();
+        }
+        return $total/3;
+    }
+}</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+<p><!-- wp:paragraph --></p>
+<p>You need to test the <code>$service</code>. However, this <code>$service</code> class calls an external API when you call <code>readTemp()</code>, we can use Mockery to bypass that when running test in Laravel.</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>According to <a href="https://laravel.com/docs/5.8/mocking#mocking-objects">Laravel Mocking</a>, in 5.8, you can do the following</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:syntaxhighlighter/code {"language":"php","lineNumbers":false} --></p>
+<pre class="wp-block-syntaxhighlighter-code">use App\Service;
+
+$service = $this-&gt;mock(Service::class, function ($mock) {
+    $mock-&gt;shouldReceive('readTemp')-&gt;times(3)-&gt;andReturns(10, 12, 14);
+});</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+<p><!-- wp:paragraph --></p>
+<p>So, in your test, you can do the following:</p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:syntaxhighlighter/code {"language":"php","lineNumbers":false} --></p>
+<pre class="wp-block-syntaxhighlighter-code">public function TemperatureAverageTest()
+{
+    $service = $this-&gt;mock(Service::class, function ($mock) {
+        $mock-&gt;shouldReceive('readTemp')-&gt;times(3)-&gt;andReturns(10, 12, 14);  
+    });
+
+    $temperature = new Temperature($service);
+    $this-&gt;assertEquals(12, $temperature-&gt;average());
+}</pre>
+<p><!-- /wp:syntaxhighlighter/code --></p>
+<p><!-- wp:paragraph --></p>
+<p>When I first use Mockery in 5.8, I was stumbleupon on why after running <code>$this-&gt;mock(...)</code> the object does not create a mock. That's when I find out it actually returns a mock object not overriding automatically all Service, I actually have to use it and apply it in my code.  </p>
+<p><!-- /wp:paragraph --></p>

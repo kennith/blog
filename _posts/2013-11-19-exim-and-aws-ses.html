@@ -1,0 +1,39 @@
+---
+layout: post
+title: EXIM and AWS SES
+date: 2013-11-19 02:01:00.000000000 -08:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- General
+tags: []
+meta:
+  _publicize_job_id: '14285458225'
+  blogger_blog: blog.kennithleung.com
+  blogger_author: Kennith Leung
+  blogger_permalink: "/2013/11/exim-and-aws-ses.html"
+  _blogger_self: https://www.blogger.com/feeds/446711350986638786/posts/default/6400551674423749479
+  original_post_id: '4'
+  _wp_old_slug: '4'
+author:
+  login: kennith
+  email: kennith.leung@gmail.com
+  display_name: Kennith
+  first_name: ''
+  last_name: ''
+permalink: "/2013/11/19/exim-and-aws-ses/"
+---
+<p>The Amazon documentation says edit the exim.conf file, but it did not work for me. Editing the exim.conf.template did.</p>
+<p>sudo dpkg-reconfigure exim4-config<br />Leave everything as default except changing the relay server to AWS SES</p>
+<p>To configure integration using STARTTLS</p>
+<p>Edit the /etc/exim/exim.conf.template file. If the file does not exist, create it. In this file, make the following changes:</p>
+<p>In the routers section, after the begin routers line, add the following:</p>
+<p>send_via_ses:<br />driver = manualroute<br />domains = ! +local_domains<br />transport = ses_smtp<br />route_list = * email-smtp.us-east-1.amazonaws.com</p>
+<p>In the transports section, after the begin transports line, add the following:<br />ses_smtp:<br />driver = smtp<br />port = 25<br />hosts_require_auth = $host_address<br />hosts_require_tls = $host_address</p>
+<p>In the authenticators section, after the begin authenticators line, add the following, replacing USERNAME and PASSWORD with your SMTP user name and password:<br />Important: Use your SMTP user name and password, not your AWS access key ID and secret access key. Your SMTP credentials and your AWS credentials are not the same. For information about how to obtain your SMTP credentials, see Obtaining Your Amazon SES SMTP Credentials.<br />ses_login:<br />driver = plaintext<br />public_name = LOGIN<br />client_send = : USERNAME : PASSWORD #obtain this information from AWS SES<br />Save the /etc/exim/exim.conf.template file.</p>
+<p>Look for this section:<br />login:                                                                                              <br />  driver = plaintext                                                                                <br />  public_name = LOGIN                                                              </p>
+<p>Change the LOGIN to OLD_LOGIN</p>
+<p>Restart the exim4 service</p>

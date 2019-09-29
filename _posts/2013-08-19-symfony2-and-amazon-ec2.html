@@ -1,0 +1,56 @@
+---
+layout: post
+title: Symfony2 and Amazon EC2
+date: 2013-08-19 05:25:00.000000000 -07:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- General
+tags: []
+meta:
+  _publicize_job_id: '14285458463'
+  blogger_blog: blog.kennithleung.com
+  blogger_author: Kennith Leung
+  blogger_permalink: "/2013/08/symfony2-and-amazon-ec2.html"
+  _blogger_self: https://www.blogger.com/feeds/446711350986638786/posts/default/6256384600643909330
+  original_post_id: '9'
+  _wp_old_slug: '9'
+author:
+  login: kennith
+  email: kennith.leung@gmail.com
+  display_name: Kennith
+  first_name: ''
+  last_name: ''
+permalink: "/2013/08/19/symfony2-and-amazon-ec2/"
+---
+<div></div>
+<div><a href="http://symfony.com/images/common/logo/logo_symfony_header.png"><img border="0" height="50" src="http://symfony.com/images/common/logo/logo_symfony_header.png" width="200" /></a><span> + </span><a href="http://d36cz9buwru1tt.cloudfront.net/Powered-by-Amazon-Web-Services.jpg"><img border="0" src="http://d36cz9buwru1tt.cloudfront.net/Powered-by-Amazon-Web-Services.jpg" /></a></div>
+<p>PHP is one of the most popular backend programming language use in 2012 (#5) and it will stay at the same rank in 2013. The strength of PHP is its simplicity and integration with HTML. Once you know the basic logic design, you can build a backend supported website pretty quickly. However, the simplicity of PHP also became one of its weakness. It is difficult to manage for big application. Luckily, there are many frameworks available today to solve this problem.</p>
+<p>In this article, I want to introduce one of the PHP framework that is popular among PHP developers, the Symphony 2, and how to set it up on Amazon EC2.</p>
+<p>Once you get into the AWS EC2 management console, launch a <b>Spot Instance </b>with at least <b>m1.medium</b>. It is because I will be using <b>composer </b>to set up the Symphony.</p>
+<p>After you launch the instance (ubuntu Linux) on AWS:</p>
+<ol>
+<li>ssh into the Linux box. </li>
+<li>run <b>apt-get install </b>php</li>
+<li>add yourself into the www-data group</li>
+<li>change the /var/www owner and group to www-data (chown www-data:www-data /var/www)</li>
+<li>change the permission of /var/www to 775 (chmod 775 /var/www)</li>
+</ol>
+<div>In the /var/www directory</div>
+<div></div>
+<div>
+<div></div>
+<ol>
+<li>curl -sS https://getcomposer.org/installer | php</li>
+<li>php composer.phar create-project symfony/framework-standard-edition s/ 2.3.1<br />(it will download the symfony version 2.3.1 to the directory [/var/www/s])</li>
+<li>go to the web directory under the folder s (/var/www/s)</li>
+<li>change the app/logs and app/cache owner to www-data</li>
+<li>edit these files and comment out the redirection<br />web/app_dev.php<br />web/config.php</li>
+</ol>
+<div><a href="https://kennith.files.wordpress.com/2013/08/94227-screenshot2013-08-18at10-20-02pm.png"><img border="0" height="138" src="https://kennith.files.wordpress.com/2013/08/94227-screenshot2013-08-18at10-20-02pm.png?w=300" width="640" /></a></div>
+<div>(It is because you didn't set it up on the localhost, it is on the AWS EC2)</p>
+<p>Now, you should able to see your server running symphony 2. </p></div>
+</div>

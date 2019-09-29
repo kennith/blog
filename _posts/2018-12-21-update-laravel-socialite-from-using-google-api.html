@@ -1,0 +1,50 @@
+---
+layout: post
+title: Update Laravel Socialite from using Google+ API
+date: 2018-12-21 21:36:24.000000000 -08:00
+type: post
+parent_id: '0'
+published: true
+password: ''
+status: publish
+categories:
+- Laravel
+tags:
+- google
+- oauth
+meta:
+  _publicize_done_13597067: '1'
+  _oembed_19f15f2ca716e2ab4b3ce3ab2c10b08f: <div class="embed-amazon"><iframe type="text/html"
+    width="500" height="550" frameborder="0" allowfullscreen style="max-width:100%"
+    src="https://read.amazon.com/kp/card?preview=inline&linkCode=kpd&ref_=k4w_oembed_fIL03WiaqydMo5&asin=B000RH0DYE&tag=kpembed-20"></iframe></div>
+  _publicize_job_id: '25734625170'
+  timeline_notification: '1545428189'
+  _publicize_done_external: a:1:{s:7:"twitter";a:1:{i:13540616;s:54:"https://twitter.com/kennith/status/1076229946060800005";}}
+  _wpas_done_13540616: '1'
+  publicize_twitter_user: kennith
+  _oembed_time_19f15f2ca716e2ab4b3ce3ab2c10b08f: '1546098661'
+author:
+  login: kennith
+  email: kennith.leung@gmail.com
+  display_name: Kennith
+  first_name: ''
+  last_name: ''
+permalink: "/2018/12/21/update-laravel-socialite-from-using-google-api/"
+---
+<p><!-- wp:image {"align":"center"} --></p>
+<div class="wp-block-image">
+<figure class="aligncenter"><img src="https://camo.githubusercontent.com/000676ceb61bd9e1385519a2a25f0e3fc881927a/68747470733a2f2f6c61726176656c2e636f6d2f6173736574732f696d672f636f6d706f6e656e74732f6c6f676f2d736f6369616c6974652e737667" alt="68747470733a2f2f6c61726176656c2e636f6d2f6173736574732f696d672f636f6d706f6e656e74732f6c6f676f2d736f6369616c6974652e737667" /></figure>
+</div>
+<p><!-- /wp:image --></p>
+<p><!-- wp:paragraph --></p>
+<p>The Laravel Socialite uses Google+ API to authenticate user, but since <a href="https://developers.google.com/+/api-shutdown">Google+ API is shutting down</a>, the https://www.googleapis.com/plus/v1/people/me will no longer works. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If you are currently using Google+ API for Socialite Google OAuth2 authentication, you should upgrade Socialite version 4. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>If are stuck with Socialite version 3.x because you need to run Laravel with lower or equal to version 5.5 (or because of PHP 7.0), change the composer package to <a href="https://github.com/laravel/socialite/issues/317#issuecomment-449411119">3.0.x-dev</a> and run <code>composer update</code> as of this writing. </p>
+<p><!-- /wp:paragraph --></p>
+<p><!-- wp:paragraph --></p>
+<p>I am expecting <a href="https://github.com/laravel/socialite/commit/79316f36641f1916a50ab14d368acdf1d97e46de">Laravel Socialite 3.x Google OAuth API will be updated</a> soon, but the package has not yet released. </p>
+<p><!-- /wp:paragraph --></p>
