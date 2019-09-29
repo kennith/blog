@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  Welcome to Jekyll!
+title:  'Welcome to Jekyll!'
 date:   2019-09-27 16:43:19 -0700
 categories: jekyll update
 ---
