@@ -2,7 +2,7 @@
 layout: post
 title: Laravel Excel Freeze Pane
 status: publish
-categories: Laravel
+categories: [Laravel, excel]
 ---
 
 This is how you freeze a column or a row when using Laravel Excel.

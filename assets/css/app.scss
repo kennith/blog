@@ -5,11 +5,19 @@
 	img {
 		max-width: 100%;
 	}
-	h1,h2 {
+	h1,h2,h3 {
 		padding-bottom: 10px;
 		border-bottom: 2px solid #ddd;
 	}
 	.snippet {
 		font-size: smaller;
 	}
+    .highlight {
+        padding: 10px;
+        background-color: #f8f8f8; 
+    }
+    p.category {
+        font-size: smaller;
+        color: #888888;
+    }
 }
