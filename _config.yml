@@ -30,7 +30,7 @@ twitter_username: kennith
 github_username:  kennith
 
 # Build settings
-# theme: minima
+theme: jekyll-theme-primer
 plugins:
   - jekyll-feed
 
