@@ -30,29 +30,22 @@ author:
   last_name: ''
 permalink: "/2019/07/26/laravel-nested-resource-group/"
 ---
-<p><!-- wp:paragraph --></p>
 <p>When I started with Laravel, <a href="https://laravel.com/docs/5.1/controllers#restful-nested-resources">nested resource group</a> was available. I liked it because I can easily create a beautiful URL with ease. For example, to generate an URL like this<code>/user/1/blog/10</code>, I just need to nest my route with this:</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:syntaxhighlighter/code {"language":"php","lineNumbers":false} --></p>
-<pre class="wp-block-syntaxhighlighter-code">Route::resource('user.blog', 'BlogController');</pre>
-<p><!-- /wp:syntaxhighlighter/code --></p>
-<p><!-- wp:paragraph --></p>
-<p>and my controller will be</p>
-<p><!-- /wp:paragraph --></p>
-<p><!-- wp:syntaxhighlighter/code {"language":"php","lineNumbers":false,"highlightLines":"3-6"} --></p>
-<pre class="wp-block-syntaxhighlighter-code">class BlogController
+
+```php
+class BlogController
 {
     public function show(User $user, Blog $blog) 
     {
         //... 
     }
-}</pre>
-<p><!-- /wp:syntaxhighlighter/code --></p>
-<p><!-- wp:paragraph --></p>
+}
+```
+
 <p>Since 5.2, this option is removed from documentation (but still available to use). So I was wondering why and I found someone already spotted this and submit a merge request. However, it was not merged with the reason below given by @taylorotwell. </p>
 <p><!-- /wp:paragraph --></p>
 <p><!-- wp:image {"id":1342,"linkDestination":"custom"} --></p>
-<figure class="wp-block-image"><a href="https://github.com/laravel/docs/pull/3833#issuecomment-340827829"><img src="https://kennith.files.wordpress.com/2019/07/image.png" alt="" class="wp-image-1342" /></a><br />
+<img src="https://kennith.files.wordpress.com/2019/07/image.png" alt="" class="" />
 <figcaption>Interesting...</figcaption>
 </figure>
 <p><!-- /wp:image --></p>
