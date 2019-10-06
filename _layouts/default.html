@@ -1,60 +1,62 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="shortcut icon" href="{{ favicon.ico | absolute_url }}">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" href="{{ favicon.ico | absolute_url }}">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ '/assets/css/app.css' | absolute_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/github.css' | absolute_url }}">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ '/assets/css/app.css' | absolute_url }}">
+	<link rel="stylesheet" href="{{ '/assets/css/github.css' | absolute_url }}">
 
-  <title>Always learning - @kennith</title>
+	<title>Always learning - @kennith</title>
 </head>
 <body>
-  <div class="container bg-light py-3 mb-3">
-    <h2><a href="{{ '/index.html' | absolute_url }} " class="text-decoration-none">Always learning</a></h2>
-  </div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light py-3 mb-3">
+		<div class="container">
+			<a class="navbar-brand" href="{{ '/' | absolute_url }}">Always learning</a>
+		</div>
+	</nav>
 
-  <div class="container content">
-    {{ content }}
-  </div>
+	<div class="container content">
+		{{ content }}
+	</div>
 
-  <div class="container">
-    {% if page.next.url %}
-    <a href="{{ page.next.url | absolute_url }}">Next</a>
-    {% else %}
-    Next 
-    {% endif %}
-    |
-    {% if page.previous.url %}
-    <a href="{{ page.previous.url | absolute_url }}">Previous</a>
-    {% else if page.url == '/' %}
-    <a href="{{ site.posts[1].url | absolute_url }}">Previous</a>
-    {% endif %}
-  </div>
+	<div class="container py-3">
+		{% if page.next.url %}
+		<a href="{{ page.next.url | absolute_url }}">Next</a>
+		{% else %}
+		Next 
+		{% endif %}
+		|
+		{% if page.previous.url %}
+		<a href="{{ page.previous.url | absolute_url }}">Previous</a>
+		{% else if page.url == '/' %}
+		<a href="{{ site.posts[1].url | absolute_url }}">Previous</a>
+		{% endif %}
+	</div>
 
-  {% if page.title != 'Archives' %}
-  <div class="container">
+	{% if page.title != 'Archives' %}
+	<div class="container">
 
-    <h4 class="border-top py-3">Other posts</h4>
-    <ul>
-    {% for post in site.posts offset:1 limit:5 %}
-    <li><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></li>
-    {% endfor %}
-    </ul>
-    <ul>
-      <li>
-        <a href="{{ '/archives.html' | absolute_url }}" class="text-muted">All others...</a>
-      </li>
-    </ul>
-  </div>
-  {% endif %}
+		<h4 class="border-top py-3">Other posts</h4>
+		<ul>
+			{% for post in site.posts offset:1 limit:5 %}
+			<li><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></li>
+			{% endfor %}
+		</ul>
+		<ul>
+			<li>
+				<a href="{{ '/archives.html' | absolute_url }}" class="text-muted">All others...</a>
+			</li>
+		</ul>
+	</div>
+	{% endif %}
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
