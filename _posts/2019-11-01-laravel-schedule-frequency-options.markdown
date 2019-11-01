@@ -1,5 +1,5 @@
 ---
-title: laravel-schedule-frequency-options
+title: Laravel Schedule Frequency Options
 layout: post
 categories: ['laravel']
 ---
