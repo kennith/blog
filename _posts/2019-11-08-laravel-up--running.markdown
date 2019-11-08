@@ -1,5 +1,5 @@
 ---
-title: laravel up & running
+title: Laravel Up & Running
 layout: post
 categories: ['books', 'laravel']
 ---

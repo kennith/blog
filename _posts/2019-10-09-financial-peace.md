@@ -1,5 +1,6 @@
 ---
-layout: default
+title: Financial Peace
+layout: post
 categories: ['books']
 ---
 <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B009PFN0MQ&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_6vLNDb0BR5G81" ></iframe>
