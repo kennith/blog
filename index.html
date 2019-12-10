@@ -7,7 +7,7 @@ layout: post
 	<a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
 </p>
 
-<p class="category">{{ post.categories | join: ", "}}</p>
+<p class="category">Categories: {{ post.categories | join: ", "}}</p>
 
 {{ post.content }}
 

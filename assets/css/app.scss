@@ -6,7 +6,7 @@ body {
 .content {
 	line-height: 30px;
     max-width: 640px;
-    
+
 	img {
 		max-width: 100%;
 	}
@@ -20,5 +20,10 @@ body {
     p.category {
         font-size: smaller;
         color: #888888;
+    }
+
+    h3 {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
     }
 }
