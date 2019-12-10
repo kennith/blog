@@ -26,7 +26,7 @@
 		{{ content }}
 	</div>
 
-	<div class="container py-3">
+	<div class="container content py-3">
 		{% if page.next.url %}
 		<a href="{{ page.next.url | absolute_url }}">Next</a>
 		{% else %}
@@ -41,17 +41,17 @@
 	</div>
 
 	{% if page.title != 'Archives' %}
-	<div class="container">
+	<div class="container content">
 
 		<h4 class="border-top py-3">Other posts</h4>
 		<ul>
-			{% for post in site.posts offset:1 limit:5 %}
+			{% for post in site.posts offset:5 limit:5 %}
 			<li><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></li>
 			{% endfor %}
 		</ul>
 		<ul>
 			<li>
-				<a href="{{ '/archives.html' | absolute_url }}" class="text-muted">All others...</a>
+				<a href="{{ 'archives.html' | absolute_url }}" class="text-muted">All others...</a>
 			</li>
 		</ul>
 	</div>
