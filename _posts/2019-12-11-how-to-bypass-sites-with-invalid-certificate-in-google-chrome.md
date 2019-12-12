@@ -9,7 +9,7 @@ I used to able to by pass the error message in Google Chrome by clicking on `Adv
 
 Ever since I upgraded to **Catalina**, the option to `proceed` is gone. 
 
-![]({{ 'img/chrome-bypass-insecure-site.png' | absolute_url }})
+![]({{ 'assets/img/chrome-bypass-insecure-site.png' | absolute_url }})
 
 **Warning: Not for everyday users**
 
