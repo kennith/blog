@@ -1,0 +1,19 @@
+name: tweet
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Ruby gem
+        run: |
+          sudo apt -yqq update
+          sudo apt install -yqq ruby gem
+      - name: Install Twurl 
+        run: sudo gem install twurl
+      - name: echo out something
+        run: /usr/local/bin/twurl -c ${{ secrets.consumer_key}} -s ${{ secrets.consumer_secret }} -a ${{ secrets.token_key }} -S ${{ secrets.token_secret}} --bearer -c ${{secrets.consumer_key}} -X POST "/1.1/statuses/update.json?status=A new blog is posted at https://kennithleung.com/blog" 
