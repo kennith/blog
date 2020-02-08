@@ -1,6 +1,7 @@
 ---
 title: GitHub Actions
 layout: post
+categories: ['devops']
 ---
 <img src="https://github.githubassets.com/images/modules/site/features/actions-icon-actions.svg">
 

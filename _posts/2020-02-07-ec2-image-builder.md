@@ -1,6 +1,7 @@
 ---
 title: EC2 Image Builder
 layout: post
+categories: ['aws']
 ---
 <img src="https://dv4pe9668mr4p.cloudfront.net/1580933164235/assets/img/How-it-works.png">
 
