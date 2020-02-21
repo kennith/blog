@@ -5,6 +5,12 @@ body {
     
 }
 
+blockquote {
+    margin-left: 5rem;
+    margin-right: 5rem;
+    font-style: italic;
+}
+
 .banner-nav {
     background-color: #007bff;
     > .container > a {
