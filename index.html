@@ -2,14 +2,13 @@
 layout: default
 ---
 {% for post in site.posts limit:5 %}
-<div class="mb-5 pb-5 border-bottom">
-<p class="h3 title">
-	<a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
-</p>
+<div class="mb-5 pb-5 border-bottom post">
+	<p class="title">
+		<a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
+	</p>
 
-<p class="category">Categories: {{ post.categories | join: ", "}}</p>
+	<p class="category">Categories: {{ post.categories | join: ", "}}</p>
 
-{{ post.content }}
-
+	{{ post.content }}
 </div>
 {% endfor %}

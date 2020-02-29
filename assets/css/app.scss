@@ -2,7 +2,6 @@
 ---
 body {
     font-family: 'Merriweather', -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    
 }
 
 blockquote {
@@ -25,12 +24,15 @@ blockquote {
 
 .banner-brand {
     font-size: 2rem;
-
 }
 
 .title {
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 3rem;
+}
+
+.post {
+    
 }
 
 .content {
@@ -48,12 +50,13 @@ blockquote {
         padding: 10px;
         background-color: #f8f8f8; 
     }
+
     p.category {
         font-size: smaller;
         color: #888888;
     }
 
-    h3 {
+    h2 {
         margin-top: 3rem;
         margin-bottom: 1rem;
     }
