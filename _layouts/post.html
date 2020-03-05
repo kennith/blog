@@ -1,10 +1,12 @@
 ---
 layout: default
 ---
-<p class="h3 title">
-	<a href="{{ page.url | absolute_url }}">{{ page.title }}</a>
-</p>
+<div class="mb-5 pb-5 border-bottom post">
+	<p class="title">
+		<a href="{{ post.url | absolute_url }}">{{ page.title }}</a>
+	</p>
+	<p class="category">Categories: {{ page.categories | join: ", "}}</p>
 
-<p class="category">{{ page.categories | join: ", "}}</p>
+	{{ content }}
+</div>
 
-{{ content }}
