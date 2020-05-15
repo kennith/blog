@@ -16,4 +16,4 @@ jobs:
       - name: Install Twurl 
         run: sudo gem install twurl
       - name: Post Twit
-        run: /usr/local/bin/twurl -c ${{ secrets.consumer_key}} -s ${{ secrets.consumer_secret }} -a ${{ secrets.token_key }} -S ${{ secrets.token_secret}} --bearer -c ${{secrets.consumer_key}} -X POST "/1.1/statuses/update.json?status=A new blog is posted at https://kennithleung.com/blog on `date`" 
+        run: /usr/local/bin/twurl -c ${{ secrets.consumer_key}} -s ${{ secrets.consumer_secret }} -a ${{ secrets.token_key }} -S ${{ secrets.token_secret}} --bearer -c ${{secrets.consumer_key}} -X POST "/1.1/statuses/update.json?status=A new blog is posted at https://kennith.dev/blog on `date`" 
