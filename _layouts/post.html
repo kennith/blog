@@ -1,12 +1,11 @@
 ---
 layout: default
 ---
-<div class="mb-5 pb-5 border-bottom post">
-	<p class="title">
+<div class="my-5 border-bottom post">
+	<h3 class="title">
 		<a href="{{ post.url | absolute_url }}">{{ page.title }}</a>
-	</p>
+	</h3>
 	<p class="category">Categories: {{ page.categories | join: ", "}}</p>
-
-	{{ content }}
+	{{ page.content }}
 </div>
 

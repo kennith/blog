@@ -1,7 +1,7 @@
 ---
 title: Why We Sleep
 layout: post
-catagories: ['books']
+categories: ['books']
 ---
 <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B06ZZ1YGJ5&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_R.CcFbZSE5JVT" ></iframe>
 
