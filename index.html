@@ -3,13 +3,15 @@ layout: default
 ---
 {% for post in site.posts limit:5 %}
 
-<div class="my-5 border-bottom post">
-	<h3 class="title">
-		<a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
-	</h3>
+<article class="mx-auto prose">
+	<div class="headline mb-5">
+		<p><a href="{{ post.url | absolute_url }}" class="hover:underline text-xl font-bold">{{ post.title }}</a></p>
+		<p class="text-sm text-gray-500">Categories: {{ post.categories | join: ", "}}</p>
+	</div>
 
-	<p class="category">Categories: {{ post.categories | join: ", "}}</p>
+	<div class="content">
+		{{ post.content }}
+	</div>
 
-	{{ post.content }}
-</div>
+</article>
 {% endfor %}

@@ -1,11 +1,15 @@
 ---
 layout: default
 ---
-<div class="my-5 border-bottom post">
-	<h3 class="title">
-		<a href="{{ post.url | absolute_url }}">{{ page.title }}</a>
-	</h3>
-	<p class="category">Categories: {{ page.categories | join: ", "}}</p>
-	{{ page.content }}
-</div>
 
+<article class="mx-auto prose">
+	<div class="headline mb-5">
+		<p><a href="{{ post.url | absolute_url }}" class="hover:underline text-xl font-bold">{{ page.title }}</a></p>
+		<p class="text-sm text-gray-500">Categories: {{ page.categories | join: ", "}}</p>
+	</div>
+
+	<div class="content">
+		{{ page.content }}
+	</div>
+
+</article>
