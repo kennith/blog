@@ -2,19 +2,24 @@
 layout: default
 title: Archives
 ---
-<div class="mx-auto prose">
+<div class="mx-auto archive">
 
-	<h2 class="headline mb-5">Archives</h2>
+	<div class="heading mb-5">
+		<p class="uppercase">Archives</p>
+		<p class="text-sm text-gray-500">
+			These are my thoughts in the past, the information can be outdated.
+		</p>
+	</div>
 
 	{% for post in site.posts %}
 	{% assign current_year = post.date | date: "%Y" %}
 	{% if current_year != year %}
-	<h3 class="">{{ current_year }}</h3>
+	<p class="my-3 py-3 bg-gray-400 text-center rounded-t border border-gray-600">{{ current_year }}</p>
 	{% endif %}
 	<ul class="">
-		<li>
-			<a href="{{ post.url | absolute_url }}" class="text-uppercase">{{ post.title }}</a>
-			<p class="text-muted text-sm">{{ post.content | strip_html | truncate: 300 }}</p>
+		<li class="pb-5">
+			<a href="{{ post.url | absolute_url }}" class="captialize">{{ post.title }}</a>
+			<p class="text-gray-600 text-sm text-justify">{{ post.content | strip_html | truncate: 200 }}</p>
 		</li>
 	</ul>
 	{% assign year = post.date | date: "%Y" %}

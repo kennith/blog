@@ -2,13 +2,17 @@
 layout: default
 ---
 
-<article class="mx-auto prose">
-	<div class="headline mb-5">
-		<p><a href="{{ post.url | absolute_url }}" class="hover:underline text-xl font-bold">{{ page.title }}</a></p>
+<article class="mx-auto mb-10 border-t-8">
+	<div class="mb-5 pt-3 pb-5 border-b">
+		<p>
+			<a href="{{ page.url | absolute_url }}" class="hover:underline text-3xl font-bold">
+				{{ page.title }}
+			</a>
+		</p>
 		<p class="text-sm text-gray-500">Categories: {{ page.categories | join: ", "}}</p>
 	</div>
 
-	<div class="content">
+	<div class="content prose">
 		{{ page.content }}
 	</div>
 

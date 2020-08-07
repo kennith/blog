@@ -18,10 +18,10 @@
 </head>
 
 <body>
-	<div class="bg-blue-800 text-gray-300 py-8">
+	<div class="bg-blue-800 text-gray-300 py-3 mb-5">
 		<nav class="mx-auto">
 
-			<h2 class="text-3xl text-red-900">
+			<h2 class="text-2xl">
 				<a class="text-gray-300 no-underline" href="{{ '/' | absolute_url }}">always learning</a>
 			</h2>
 		</nav>
@@ -32,7 +32,7 @@
 	</div>
 
 	{% if page.title != 'Archives' %}
-	<div class="mx-auto prose">
+	<div class="mx-auto text-gray-600 container file-navigator">
 		{% if page.next.url %}
 		<a href="{{ page.next.url | absolute_url }}">Next</a>
 		{% else %} Next {% endif %} | {% if page.previous.url %}
@@ -42,24 +42,23 @@
 		{% endif %}
 	</div>
 
-	<div class="py-8 my-5">
+	<footer class="py-5 my-5 mx-auto border-t text-gray-800">
+		<p class="py-3">Other posts</p>
 
-		<div class="mx-auto prose my-5">
-			<h4 class="">Other posts</h4>
-			<ul class="">
-				{% for post in site.posts offset:5 limit:5 %}
-				<li><a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
-				</li>
-				{% endfor %}
-			</ul>
-			<ul>
-				<li>
-					<a href="{{ 'archives.html' | absolute_url }}" class="">All others...</a>
-				</li>
-			</ul>
-		</div>
+		<ul class="list-inside list-disc">
+			{% for post in site.posts offset:5 limit:5 %}
+			<li>
+				<a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		<ul class="list-inside list-disc pt-2">
+			<li>
+				<a href="{{ 'archives.html' | absolute_url }}" class="">All others...</a>
+			</li>
+		</ul>
 		{% endif %}
-	</div>
+	</footer>
 
 </body>
 
