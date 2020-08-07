@@ -31,7 +31,7 @@
 		{{ content }}
 	</div>
 
-	{% if page.title != 'Archives' %}
+	{% if page.title != "404" and page.title != "Archives" %}
 	<div class="mx-auto text-gray-600 container file-navigator">
 		{% if page.next.url %}
 		<a href="{{ page.next.url | absolute_url }}">Next</a>
@@ -42,24 +42,9 @@
 		{% endif %}
 	</div>
 
-	<footer class="py-5 my-5 mx-auto border-t text-gray-800">
-		<p class="py-3">Other posts</p>
+	{% include footer.html %}
 
-		<ul class="list-inside list-disc">
-			{% for post in site.posts offset:5 limit:5 %}
-			<li>
-				<a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
-			</li>
-			{% endfor %}
-		</ul>
-		<ul class="list-inside list-disc pt-2">
-			<li>
-				<a href="{{ 'archives.html' | absolute_url }}" class="">All others...</a>
-			</li>
-		</ul>
-		{% endif %}
-	</footer>
-
+	{% endif %}
 </body>
 
 </html>

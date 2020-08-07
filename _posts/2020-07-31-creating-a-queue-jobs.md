@@ -1,11 +1,12 @@
 ---
 title: Creating a Queue Jobs
 layout: post
-categories: ['programming']
+categories: ["programming"]
 ---
-The Laravel Queue is very powerful, but if you are not processing a job from Laravel, it will not work. 
 
-The setup below is an idea on how to create a queue worker and setup a runner. 
+The Laravel Queue is very powerful, but if you are not processing a job from Laravel, it will not work.
+
+The setup below is an idea on how to create a queue worker and setup a runner.
 
 ## Create a worker to retrieve message from SQS.
 
@@ -33,9 +34,9 @@ while (true) {
 }
 ```
 
-## Configure supervisor 
+## Configure supervisor
 
-```bash
+```ini
 [program:worker]
 process_name=%(program_name)s_%(process_num)02d
 command=php /path-to-app/artisan app:run-worker
