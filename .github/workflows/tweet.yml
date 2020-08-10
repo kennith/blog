@@ -1,19 +1,19 @@
 name: tweet
 
 on:
-  push:
-    branches:
-      - master
+    push:
+        branches:
+            - master
 
 jobs:
-  post:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Update apt repo
-        run: sudo apt -yqq clean && sudo apt -yqq update
-      - name: Install Ruby gem
-        run: sudo apt install -yqq ruby gem
-      - name: Install Twurl 
-        run: sudo gem install twurl
-      - name: Post Twit
-        run: /usr/local/bin/twurl -c ${{ secrets.consumer_key}} -s ${{ secrets.consumer_secret }} -a ${{ secrets.token_key }} -S ${{ secrets.token_secret}} --bearer -c ${{secrets.consumer_key}} -X POST "/1.1/statuses/update.json?status=A new blog is posted at https://kennith.dev/blog on `date`" 
+    post:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Update apt repo
+              run: sudo apt -yqq clean && sudo apt -yqq update
+            - name: Install Ruby gem
+              run: sudo apt install -yqq ruby gem
+            - name: Install Twurl
+              run: sudo gem install twurl
+            - name: Post Twit
+              run: /usr/local/bin/twurl -c ${{ secrets.consumer_key}} -s ${{ secrets.consumer_secret }} -a ${{ secrets.token_key }} -S ${{ secrets.token_secret}} --bearer -c ${{secrets.consumer_key}} -X POST "/1.1/statuses/update.json?status=Read `git log -1 --pretty=%B` at https://kennith.dev/blog"
