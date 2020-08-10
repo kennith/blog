@@ -10,7 +10,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-              run: git checkout HEAD^
+            - run: git checkout HEAD^
+
             - name: Update apt repo
               run: sudo apt -yqq clean && sudo apt -yqq update
             - name: Install Ruby gem
