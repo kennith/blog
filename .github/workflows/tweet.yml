@@ -18,6 +18,6 @@ jobs:
             - name: Install Twurl
               run: sudo gem install twurl
             - name: test checkout@v2
-              run: git log 
+              run: git log -1 --pretty=%B
             - name: Post Twit
-              run: echo 'post' #/usr/local/bin/twurl -c ${{ secrets.consumer_key}} -s ${{ secrets.consumer_secret }} -a ${{ secrets.token_key }} -S ${{ secrets.token_secret}} --bearer -c ${{secrets.consumer_key}} -X POST "/1.1/statuses/update.json?status=Read $GITHUB_SHA at https://kennith.dev/blog"
+              run: /usr/local/bin/twurl -c ${{ secrets.consumer_key}} -s ${{ secrets.consumer_secret }} -a ${{ secrets.token_key }} -S ${{ secrets.token_secret}} --bearer -c ${{secrets.consumer_key}} -X POST "/1.1/statuses/update.json?status=Read `git log -1 --pretty=%B` at https://kennith.dev/blog"
