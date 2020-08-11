@@ -5,7 +5,7 @@ title: index
 {% for post in site.posts limit:5 %}
 
 <article class="mx-auto mb-10 border-t-8">
-	<div class="mb-5 pt-3 pb-5 border-b">
+	<div class="mb-5 pt-3 pb-5 border-b text-center sm:text-left">
 		<p>
 			<a href="{{ post.url | absolute_url }}" class="hover:underline text-3xl font-bold">
 				{{ post.title }}
