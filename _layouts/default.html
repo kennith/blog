@@ -32,7 +32,7 @@
 	</div>
 
 	{% if page.title != "404" and page.title != "Archives" %}
-	<div class="mx-auto text-gray-600 container file-navigator">
+	<div class="mx-2 sm:mx-auto text-gray-600 container file-navigator">
 		{% if page.next.url %}
 		<a href="{{ page.next.url | absolute_url }}">Next</a>
 		{% else %} Next {% endif %} | {% if page.previous.url %}
