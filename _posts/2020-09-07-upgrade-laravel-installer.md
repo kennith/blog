@@ -11,7 +11,7 @@ Therefore, it's important to run the composer update on the `Laravel Installer`.
 
 ## Steps
 
-1. Edit `$HOME/.composer/.composer.json`
+1. Edit `$HOME/.composer/composer.json`
 2. Update `laravel/installer` to `^4.0`
 3. Run `composer global update laravel/installer`
 4. Verify by execute `laravel --version`
