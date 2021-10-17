@@ -1,0 +1,7 @@
+---
+title: Hail Mary
+layout: ['books']
+---
+<iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B08FHBV4ZX&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_NT8M5EBM3MW54XC5ZXR2" ></iframe>
+
+I picked up this book because I enjoyed a lot with "The Martian". In some part was a drag, but it was a good emotional journey of one being alone in a place. 
