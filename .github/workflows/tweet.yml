@@ -19,5 +19,5 @@ jobs:
               run: sudo gem install twurl
             - name: test checkout@v2
               run: git log -1 --pretty=%B
-            - name: Post Twit
-              run: /usr/local/bin/twurl -c ${{ secrets.consumer_key}} -s ${{ secrets.consumer_secret }} -a ${{ secrets.token_key }} -S ${{ secrets.token_secret}} --bearer -c ${{secrets.consumer_key}} -X POST "/1.1/statuses/update.json?status=Read `git log -1 --pretty=%B` at https://kennith.dev/blog"
+            #- name: Post Twit
+            #  run: /usr/local/bin/twurl -c ${{ secrets.consumer_key}} -s ${{ secrets.consumer_secret }} -a ${{ secrets.token_key }} -S ${{ secrets.token_secret}} --bearer -c ${{secrets.consumer_key}} -X POST "/1.1/statuses/update.json?status=Read `git log -1 --pretty=%B` at https://kennith.dev/blog"
