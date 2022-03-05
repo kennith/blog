@@ -4,7 +4,7 @@
             "post"
         ],
         "body": [
-            "---\ntitle \"${1:post}\"\nlayout: post\ncategories: [\"${2:categories}\"]\n---\n\n"
+            "---\ntitle: \"${1:post}\"\nlayout: post\ncategories: [\"${2:categories}\"]\n---\n\n"
         ],
         "description": "post"
     }
