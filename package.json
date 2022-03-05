@@ -4,7 +4,6 @@
         "commit": "cz"
     },
     "devDependencies": {
-        "cz-conventional-changelog": "^3.3.0",
         "git-cz": "^4.7.6"
     },
     "config": {
