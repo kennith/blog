@@ -38,7 +38,7 @@ module.exports = {
 
 ### Test out package
 
-I use `nuxtjs` framework as an example.
+I use `nuxtjs` framework as an example. (read https://nuxt.com/docs/guide/concepts/esm)
 
 1. Run `npm init nuxt-app test-example-js`
 2. Run `npm link ../example-js`. (I put text-example-js and example-js on the same folder level)
