@@ -1,5 +1,5 @@
 ---
-title: A Recap of 2022
+title: Recap of 2022 and Look Ahead to 2023
 layout: post
 categories: ["thoughts", "recap"]
 ---
