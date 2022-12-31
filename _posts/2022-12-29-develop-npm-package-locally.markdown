@@ -15,9 +15,25 @@ Steps to develop an NPM package without publishing it on NPM.
 As an example, I created a function name `sum`
 
 ```javascript
+// ES6
 export default function sum(x, y) {
     return x + y;
 }
+
+// CommonJS
+module.exports = (x,y) => {
+	return x + y;
+}
+
+// or
+function sum(x, y) {
+	return x + y;
+}
+
+module.exports = {
+	sum,
+}
+
 ```
 
 ### Test out package
@@ -30,7 +46,12 @@ I use `nuxtjs` framework as an example.
 
 ```vuejs
 <script setup>
+	// ES6
 	import sum from '@example-org/example-js'
+	// CommonJS
+	const sum = require('@example-org/example-js')
+	// or
+	const {sum} = require('@example-org/example-js')
 
 	const testSumJs = computed(() => {
 		return sum(1, 2);
