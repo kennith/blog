@@ -1,0 +1,8 @@
+---
+title: The Ride of a Lifetime
+layout: "post"
+categories: "books"
+---
+<iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=kennithdev-20&language=en_US&marketplace=amazon&region=US&placement=0399592091&asins=0399592091&linkId=bea1b8e3685b369065fea66db71f1d6a&show_border=true&link_opens_in_new_window=true"></iframe>
+
+Although this read like a biography, it is actually a business book about decision making and work with empathy.
