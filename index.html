@@ -5,21 +5,8 @@ title: index
 
 {% for post in site.posts limit:4 %}
 
-<article class="mx-auto mb-10 border-t-8">
-	<div class="mb-5 pt-3 pb-5 border-b text-center sm:text-left">
-		<p>
-			<a href="{{ post.url | absolute_url }}" class="hover:underline text-3xl font-bold">
-				{{ post.title }}
-			</a>
-		</p>
-		<p class="text-sm text-gray-500">Categories: {{ post.categories | join: ", "}}</p>
-	</div>
+{% include post-article.html title = post.title categories = post.categories content = post.content url = post.url %}
 
-	<div class="content prose">
-		{{ post.content }}
-	</div>
-
-</article>
 {% endfor %}
 
 {% include post-recent.html %}

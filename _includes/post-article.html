@@ -1,0 +1,15 @@
+<article class="mx-auto mb-10 border-t-8">
+	<div class="mb-5 pt-3 pb-5 border-b text-center sm:text-left">
+		<p>
+			<a href="{{ include.url | absolute_url }}" class="hover:underline text-3xl font-bold">
+				{{ include.title }}
+			</a>
+		</p>
+		<p class="text-sm text-gray-500">Categories: {{ include.categories | join: ", "}}</p>
+	</div>
+
+	<div class="content prose">
+		{{ include.content }}
+	</div>
+
+</article>
