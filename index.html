@@ -1,12 +1,18 @@
 ---
 layout: default
-title: index
+title: List
 ---
-
-{% for post in site.posts limit:4 %}
-
-{% include post-article.html title = post.title categories = post.categories content = post.content url = post.url %}
-
-{% endfor %}
-
-{% include post-recent.html %}
+<div class="container mx-auto">
+	{% for post in site.posts %}
+	<ul class="">
+		<li class="">
+			<div class="border-b-2 py-1 flex justify-between">
+				<a href="{{ post.url | absolute_url }}" class="captialize">{{ post.title }}</a>
+				<div class="text-gray-500">
+					{{ post.date | date: "%B %d, %Y"}}
+				</div>
+			</div>
+		</li>
+	</ul>
+	{% endfor %}
+</div>
