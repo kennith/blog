@@ -1,0 +1,12 @@
+---
+layout: default
+title: index
+---
+
+{% for post in site.posts limit:4 %}
+
+{% include post-article.html title = post.title categories = post.categories content = post.content url = post.url %}
+
+{% endfor %}
+
+{% include post-recent.html %}

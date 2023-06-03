@@ -1,5 +1,5 @@
 ---
-title: The Art of Doing Science and Engineering: Learning to Learn
+title: "The Art of Doing Science and Engineering: Learning to Learn"
 layout: post
 categories: ['books']
 ---
