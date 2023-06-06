@@ -1,7 +1,7 @@
 {
     "private": true,
     "scripts": {
-        "commit": "cz"
+        "commit": "git-cz"
     },
     "devDependencies": {
         "git-cz": "^4.7.6"
