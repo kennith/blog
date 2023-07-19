@@ -14,7 +14,8 @@ title: Archives
 	{% for post in site.posts %}
 	{% assign current_year = post.date | date: "%Y" %}
 	{% if current_year != year %}
-	<p class="my-3 py-3 bg-gray-400 text-center rounded-t border border-gray-600 font-medium">{{ current_year }}</p>
+	<h1 class="text-right text-2xl mb-5 pb-5 border-b-2">{{ current_year }}</h1>
+
 	{% endif %}
 	<ul class="">
 		<li class="pb-5">

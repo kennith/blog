@@ -2,17 +2,31 @@
 layout: default
 title: List
 ---
+{% assign current_year = "now"| date: "%Y" %}
+
 <div class="container mx-auto">
+	<h1 class="text-right text-2xl mb-5 pb-5 border-b-2">{{ current_year }}</h1>
 	{% for post in site.posts %}
+	{% assign year = post.date | date:"%Y" %}
+	{% if year == current_year %}
 	<ul class="">
 		<li class="">
-			<div class="border-b-2 py-1 flex justify-between">
-				<a href="{{ post.url | absolute_url }}" class="captialize">{{ post.title }}</a>
-				<div class="text-gray-500">
-					{{ post.date | date: "%B %d, %Y"}}
+			<a href="{{ post.url | absolute_url }}" class="captialize hover:underline">
+				<div class="py-3 flex justify-between">
+					<div>
+						{{ post.title }}
+					</div>
+					<div class="text-gray-500">
+						{{ post.date | date: "%B %d"}}
+					</div>
 				</div>
-			</div>
+			</a>
 		</li>
 	</ul>
+	{% endif %}
 	{% endfor %}
+
+	<p class="my-5 py-5 text-center border-t-2 text-gray-300">
+		<a href="{{ site.baseurl }}/archives">Archives</a>
+	</p>
 </div>

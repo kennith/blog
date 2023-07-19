@@ -1,6 +1,16 @@
+{% assign current_year = "now"| date: "%Y" %}
+
+{% assign year = include.page_date | date:"%Y" %}
+
+{% if year != current_year %}
+<article class="mx-auto py-5">
+	<p class="text-center bg-yellow-100 py-5 rounded text-gray-700">Warning: This article was written in {{ year }}, the content might be out of date.</p>
+</article>
+{% endif %}
+
 <article class="mx-auto mb-10 border-t-8">
 	<div class="mb-5 pt-3 pb-5 border-b text-center sm:text-left">
-		<p>
+		<p class="pb-3">
 			<a href="{{ include.url | absolute_url }}" class="hover:underline text-3xl font-bold">
 				{{ include.title }}
 			</a>
