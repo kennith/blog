@@ -6,7 +6,10 @@ title: List
 
 <div class="container mx-auto">
 	<h1 class="text-right text-2xl mb-5 pb-5 border-b-2">{{ current_year }}</h1>
+	{% assign current_archive_year = "now"| date: "%Y" %}
+
 	{% for post in site.posts %}
+
 	{% assign year = post.date | date:"%Y" %}
 	{% if year == current_year %}
 	<ul class="">
@@ -24,9 +27,22 @@ title: List
 		</li>
 	</ul>
 	{% endif %}
+
 	{% endfor %}
 
 	<p class="my-5 py-5 text-center border-t-2 text-gray-300">
-		<a href="{{ site.baseurl }}/archives">Archives</a>
+		{% assign seperator = '' %}
+		{% for post in site.posts %}
+		{% assign display_archive_year = post.date | date: "%Y" %}
+
+		{% if display_archive_year != current_archive_year %}
+		{{ seperator }}
+		<a href="{{ site.baseurl }}/archives#{{display_archive_year}}">{{ display_archive_year }}</a>
+		{% assign current_archive_year = display_archive_year %}
+		{% assign seperator = ',' %}
+		{% endif %}
+
+		{% endfor %}
+
 	</p>
 </div>
