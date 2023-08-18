@@ -5,30 +5,26 @@ title: List
 {% assign current_year = "now"| date: "%Y" %}
 
 <div class="container mx-auto">
-	<h1 class="text-right text-2xl mb-5 pb-5 border-b-2">{{ current_year }}</h1>
+	<h1 class="text-2xl mb-3 pb-3 border-b-2 text-gray-600 font-black">{{ current_year }}</h1>
 	{% assign current_archive_year = "now"| date: "%Y" %}
 
-	{% for post in site.posts %}
-
-	{% assign year = post.date | date:"%Y" %}
-	{% if year == current_year %}
 	<ul class="">
-		<li class="">
-			<a href="{{ post.url | absolute_url }}" class="captialize hover:underline">
-				<div class="py-3 flex justify-between">
-					<div>
-						{{ post.title }}
-					</div>
-					<div class="text-gray-500">
-						{{ post.date | date: "%B %d"}}
-					</div>
-				</div>
-			</a>
-		</li>
-	</ul>
-	{% endif %}
+		{% for post in site.posts %}
 
-	{% endfor %}
+		{% assign year = post.date | date:"%Y" %}
+		{% if year == current_year %}
+
+		{% include
+		yearly.html
+		title = post.title
+		date = post.date
+		url = post.url
+		%}
+		{% endif %}
+
+
+		{% endfor %}
+	</ul>
 
 	<p class="my-5 py-5 text-center border-t-2 text-gray-300">
 		{% assign seperator = '' %}

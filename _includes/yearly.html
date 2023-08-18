@@ -1,0 +1,12 @@
+<li class="">
+	<a href="{{ include.url | absolute_url }}" class="captialize hover:underline">
+		<div class="py-2 flex justify-between">
+			<div>
+				{{ include.title }}
+			</div>
+			<div class="text-gray-400 text-sm">
+				{{ include.date | date: "%B %d"}}
+			</div>
+		</div>
+	</a>
+</li>
