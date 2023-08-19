@@ -11,19 +11,20 @@ title: Archives
 		</p>
 	</div>
 
-	{% for post in site.posts %}
-	{% assign current_year = post.date | date: "%Y" %}
-	{% if current_year != year %}
-	<h1 class="text-2xl mb-3 pb-3 mt-2 border-b-2 text-gray-600 font-black">{{ current_year }}</h1>
-	{% endif %}
 	<ul>
+		{% for post in site.posts %}
+		{% assign current_year = post.date | date: "%Y" %}
+		{% if current_year != year %}
+		<a id="{{ current_year}}"></a>
+		<h1 class="text-2xl mb-3 pb-3 mt-2 border-b-2 text-gray-600 font-black">{{ current_year }}</h1>
+		{% endif %}
 		{% include
 		yearly.html
 		title = post.title
 		date = post.date
 		url = post.url
 		%}
+		{% assign year = post.date | date: "%Y" %}
+		{% endfor %}
 	</ul>
-	{% assign year = post.date | date: "%Y" %}
-	{% endfor %}
 </div>
