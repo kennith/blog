@@ -1,7 +1,8 @@
 {
     "private": true,
     "scripts": {
-        "commit": "git-cz"
+        "commit": "git-cz",
+        "dev": "bundle exec jekyll serve --livereload"
     },
     "devDependencies": {
         "git-cz": "^4.7.6"
