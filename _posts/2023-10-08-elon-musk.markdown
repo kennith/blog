@@ -1,0 +1,16 @@
+---
+title: Elon Musk
+layout: post
+categories: ['books']
+---
+<iframe type="text/html" sandbox="allow-scripts allow-same-origin allow-popups" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0BW9TRGKV&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_ZAMP22AXZBWGFZPDSQXY" ></iframe>
+
+A person who have put his mind on payment, space, car, social media, and AI. This book allowed me to get some insights about how a person who is involved and successful in so many areas work. 
+
+Of course, like ELon Musk said himself in SNL, he is not a chill dude. 
+
+I learned that
+
+1. How to get things done. (Lead by example.)
+2. First principle and question every requirement. 
+3. The leader must make a decision quickly and decisively. 
