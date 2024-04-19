@@ -1,5 +1,5 @@
 ---
-title: System Design Interview: Volume 2
+title: System Design Interview Volume 2
 layout: post
 categories: ['books']
 ---
