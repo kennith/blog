@@ -1,6 +1,7 @@
 ---
 title: 填詞L
 layout: post
+categories: ['movies']
 ---
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tXXzGLuMfTA?si=QafY5uPpxr6TaN7s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -8,13 +9,11 @@ A movie invested by the director with limit budget. It led to a movie written wi
 
 The main theme song summerize the movie well. 
 
-難得我耗光一世努力才放棄
-曾花過力氣不過未令人銘記 
-夢碎不需透過萬人集氣
-慢慢轉身別離
-能爽快結束需要豁達和勇氣
-誰保證熱血可兌換動人結尾
-白費幾多感情白費幾多志氣
-就怪當初你我太入戲
+難得我耗光一世努力才放棄 曾花過力氣不過未令人銘記 
+
+夢碎不需透過萬人集氣 慢慢轉身別離
+
+能爽快結束需要豁達和勇氣 誰保證熱血可兌換動人結尾
+白費幾多感情白費幾多志氣 就怪當初你我太入戲
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/EhT1E04pCg8?si=7J_Li2y32Hn5eDJE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
