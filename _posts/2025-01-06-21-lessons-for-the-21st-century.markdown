@@ -4,7 +4,7 @@ layout: post
 categories: ['books']
 ---
 
-<iframe type="text/html" sandbox="allow-scripts allow-same-origin allow-popups" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B079WM7KLS&preview=inline&" ></iframe>
+<iframe type="text/html" sandbox="allow-scripts allow-same-origin allow-popups" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B079WM7KLS&preview=inline" ></iframe>
 
 ...So what should we be teaching? Many pedagogical experts argue that schools should switch to teaching "the four Cs" -- critical thinking, communication, collaboration, and creativity...
 
