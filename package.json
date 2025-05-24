@@ -2,7 +2,8 @@
     "private": true,
     "scripts": {
         "commit": "git-cz",
-        "dev": "bundle exec jekyll serve --livereload"
+        "dev": "bundle exec jekyll serve --livereload",
+        "open": "open http://127.0.0.1:4000/blog/"
     },
     "devDependencies": {
         "git-cz": "^4.7.6"
