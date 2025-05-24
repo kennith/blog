@@ -23,8 +23,28 @@ The site url is https://kennith.github.io
 
 ## Amazon Embed
 
-It is no longer available on amazon.com. The workaround is to embed it manually.
+Add this into Sublime Text `/Packages/User/amazon-preview.sublime-snippet`
 
-<iframe type="text/html" sandbox="allow-scripts allow-same-origin allow-popups" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=<replace>&preview=inline&linkCode=kpe&ref_=kip_embed_taf_preview_0SHHNVF47Z9HVP0ZAPW7"></iframe>
+```xml
+<snippet>
+    <content><![CDATA[
+<iframe 
+    src="https://read.amazon.com/kp/card?asin=${1:asin-code}&preview=inline&linkCode=kpe"
+    type="text/html" 
+    sandbox="allow-scripts allow-same-origin allow-popups" 
+    width="336" height="550" 
+    frameborder="0" 
+    allowfullscreen 
+    style="max-width:100%" 
+    >
+</iframe>
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <!-- <tabTrigger>hello</tabTrigger> -->
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+    <description>Inert Amazon preview card</description>
+</snippet>
+```
 
-The `<replace>` ASIN is from link, e.g. B079WM7KLS https://www.amazon.com/dp/B079WM7KLS
+Replace `asin-code` with the ASIN is from link, e.g. B079WM7KLS in https://www.amazon.com/dp/B079WM7KLS
