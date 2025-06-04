@@ -1,0 +1,8 @@
+{
+    "Preview": {
+        "body": [
+            "<iframe\n\tsrc=\"https://read.amazon.com/kp/card?asin=${1:asin-code}&preview=inline&linkCode=kpe\"\n\ttype=\"text/html\"\n\tsandbox=\"allow-scripts allow-same-origin allow-popups\"\n\twidth=\"336\" height=\"550\"\n\tframeborder=\"0\"\n\tallowfullscreen\n\tstyle=\"max-width:100%\"\n></iframe>\n"
+        ],
+        "description": "Amazon Preview"
+    }
+}
