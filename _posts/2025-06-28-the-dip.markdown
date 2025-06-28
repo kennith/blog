@@ -1,0 +1,19 @@
+---
+title: The Dip
+layout: post
+categories: ["books"]
+---
+
+<iframe
+    src="https://read.amazon.com/kp/card?asin=1591841666&preview=inline&linkCode=kpe"
+    type="text/html"
+    sandbox="allow-scripts allow-same-origin allow-popups"
+    width="336" height="550"
+    frameborder="0"
+    allowfullscreen
+    style="max-width:100%"
+></iframe>
+
+Recommend to people who have more experience in life.
+
+Just remember, you can set out to be the best in the world, but at the same time, it is not failing to set out to be the best in your community.
